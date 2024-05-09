@@ -21,8 +21,6 @@ export default function Excel() {
     //     });
     // }
 
-    console.log(object);
-
     const [file, setFile] = useState(null);
     const [jsonData, setJsonData] = useState([]);
 
