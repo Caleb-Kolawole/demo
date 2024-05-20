@@ -7,6 +7,7 @@ export default function Home() {
         <Link to={"/"}>Home</Link>
       <Link to={"/excel"}>Excel</Link>
       <Link to={"/paginate"}>PAginate</Link>
+      <Link to={"/login"}>Login</Link>
     </div>
   )
 }
