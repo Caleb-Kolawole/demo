@@ -34,6 +34,53 @@ const Login = () => {
     }
   };
 
+  
+  // Thisis the code to to use continue with google without creating an account
+
+  // async function signin() {
+  //   const handleGoogleSignIn = async () => {
+  //     try {
+  //       const result = await signInWithPopup(auth, provider);
+  //       const user = result.user;
+
+  //       const userExists = await checkUserExists(user.uid);
+  
+  //       if (userExists) {
+  //         console.log('User exists in Firestore:', user.uid);
+  //       } else {
+  //         await deleteUserAccount(user.uid);
+  //         alert('Your account does not exist. Please contact the administrator.');
+  //         await auth.signOut();
+  //       }
+  //     } catch (error) {
+  //       console.error(error);
+  //       alert('Error signing in with Google. Please try again.');
+  //     }
+  //  };
+  
+  //  const checkUserExists = async (uid) => {
+  //     try {
+  //       const userDoc = await getDoc(doc(db, 'users', uid));
+  //       return userDoc.exists();
+  //     } catch (error) {
+  //       console.error(error);
+  //       throw error;
+  //     }
+  //  };
+  
+  //  const deleteUserAccount = async (uid) => {
+  //     try {
+  //       await auth.currentUser.delete();
+  //       console.log('Account deleted:', uid);
+  //     } catch (error) {
+  //       console.error(error);
+  //       throw error;
+  //     }
+  //  };
+  
+  //  handleGoogleSignIn();
+  // }
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
     <div className="max-w-md w-full space-y-8">
