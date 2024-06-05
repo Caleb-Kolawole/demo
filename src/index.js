@@ -1,5 +1,3 @@
-import 'primereact/resources/themes/saga-blue/theme.css';
-import 'primereact/resources/primereact.min.css';
 // import 'primeicons/primeicons.css';
 // import 'primeflex/primeflex.css';
 import React from 'react';
@@ -8,9 +6,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { PrimeReactProvider } from 'primereact/api';
+import "primereact/resources/themes/lara-light-indigo/theme.css";
+import 'primereact/resources/primereact.min.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <PrimeReactProvider>
+  <PrimeReactProvider unstyled = {false}>
     <App />
   </PrimeReactProvider>
 );

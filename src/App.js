@@ -4,6 +4,7 @@ import Home from './Home';
 import Paginate from './Paginate';
 import Excel from './Excel';
 import Login from './Login';
+import Prime from './prime';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/excel" element={<Excel />} />
           <Route path="/paginate" element={<Paginate />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/prime" element={<Prime />} />
         </Routes>
       </BrowserRouter>
     </div>
