@@ -5,6 +5,7 @@ import Paginate from './Paginate';
 import Excel from './Excel';
 import Login from './Login';
 import Prime from './prime';
+import FetchData from './FetchData';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/paginate" element={<Paginate />} />
           <Route path="/login" element={<Login />} />
           <Route path="/prime" element={<Prime />} />
+          <Route path="/test" element={<FetchData />} />
         </Routes>
       </BrowserRouter>
     </div>

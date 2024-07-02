@@ -9,6 +9,7 @@ export default function Home() {
       <Link to={"/paginate"}>PAginate</Link>
       <Link to={"/login"}>Login</Link>
       <Link to={"/prime"}>Prime</Link>
+      <Link to={"/test"}>Test</Link>
     </div>
   )
 }
