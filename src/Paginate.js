@@ -22,23 +22,23 @@ export default function Paginate() {
   const itemsPerPage = 5; // Number of items per page
 
   // Fetch initial data
-  useEffect(() => {
-    const fetchData = async () => {
-      const q = query(
-        collection(db, "loans-testing"),
-        orderBy("id", "asc"),
-        limit(itemsPerPage)
-      );
-      const querySnapshot = await getDocs(q);
-      const items = querySnapshot.docs.map((doc) => ({
-        key: doc.id,
-        ...doc.data(),
-      }));
-      setList(items);
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const q = query(
+  //       collection(db, "loans-testing"),
+  //       orderBy("id", "asc"),
+  //       limit(itemsPerPage)
+  //     );
+  //     const querySnapshot = await getDocs(q);
+  //     const items = querySnapshot.docs.map((doc) => ({
+  //       key: doc.id,
+  //       ...doc.data(),
+  //     }));
+  //     setList(items);
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   // Function to fetch next set of data
   const showNext = async () => {
@@ -75,7 +75,7 @@ export default function Paginate() {
     setPage(page - 1);
   };
 
-  const search = async () => {
+  const search = async (oracleId) => {
     const q = query(
       collection(db, "loans-testing"),
       where("oracleId", "==", 13968)
@@ -87,6 +87,13 @@ export default function Paginate() {
     }));
     console.log(items);
     // setPage(page - 1);
+  };
+
+  const testArray = () => {
+    let array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    console.log(array);
+    array.push(20);
+    console.log(array);
   };
 
   return (
@@ -104,6 +111,7 @@ export default function Paginate() {
         <button onClick={showPrevious}>Previous</button>
         <button onClick={showNext}>Next</button>
         <button onClick={search}>search</button>
+        <button onClick={testArray}>test</button>
       </div>
     </div>
   );
