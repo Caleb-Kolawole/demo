@@ -24,7 +24,7 @@ export default function FetchData() {
   return (
     <div>
       <p>Hii... from Caleb 👋👋😁</p>
-      <p>testing if zapier works</p>
+      <p>testing if zapier working</p>
     </div>
   )
 }
