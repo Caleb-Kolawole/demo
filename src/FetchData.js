@@ -22,6 +22,8 @@ export default function FetchData() {
 
     fetchDocumentData();
   return (
-    <div>Hii... from Caleb 👋👋😁</div>
+    <div>
+      <p>Hii... from Caleb 👋👋😁</p>
+    </div>
   )
 }

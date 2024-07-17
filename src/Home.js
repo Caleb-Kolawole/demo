@@ -10,6 +10,8 @@ export default function Home() {
       <Link to={"/login"}>Login</Link>
       <Link to={"/prime"}>Prime</Link>
       <Link to={"/test"}>Test</Link>
+
+      {/* Hello from Caleb */}
     </div>
   )
 }
