@@ -5,6 +5,7 @@ import readXlsxFile from 'read-excel-file';
 import * as XLSX from 'xlsx';
 import Home from './Home';
 import { storage } from './firebase';
+import { saveAs } from 'file-saver'; 
 export default function Excel() {
 
     // const [jsonData, setJsonData] = useState(null);
@@ -48,7 +49,7 @@ export default function Excel() {
           () => {
             // Handle successful uploads on complete
             getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-              alert('File available at now');
+              alert('File available at storage');
             });
           }
         );
@@ -77,6 +78,26 @@ export default function Excel() {
                 return obj;
             });
             setJsonData(transformedData);
+            // Here is the code 🔥🔥🔥🔥🔥☕
+            const worksheet = XLSX.utils.json_to_sheet(transformedData);
+            const workbook = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
+            const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+            const blob = new Blob([excelBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8' });
+            saveAs(blob, "exported_data.xlsx");
+            const storageRef = ref(storage, 'uploads/exported_data.xlsx');
+            uploadBytesResumable(storageRef, blob).then((snapshot) => {
+                console.log('Uploaded the file, lets blaze!');
+                getDownloadURL(snapshot.ref).then((downloadURL) => {
+                    console.log('File available at', downloadURL);
+                    alert('File uploaded successfully! Available now at firebase storage');
+                });
+            }).catch((error) => {
+                // Handle unsuccessful uploads
+                console.error(error);
+            });
+
+            // Stops here 👨🏽‍💻☕
             convertJsonToFileAndUpload(transformedData);
         };
         reader.readAsBinaryString(file);

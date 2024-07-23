@@ -33,13 +33,14 @@ import { getAuth } from "firebase/auth";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyA3NBYHmZmZ4i20ZKuR_4GNlTgOTvaHXgc",
-  authDomain: "agapi-credit.firebaseapp.com",
-  projectId: "agapi-credit",
-  storageBucket: "agapi-credit.appspot.com",
-  messagingSenderId: "38818193061",
-  appId: "1:38818193061:web:9df6ba1bc4ba0c2a07b74c",
-  measurementId: "G-XZWVC6NVT6"
+  apiKey: "AIzaSyDbhKPHLHLqUxLiSLAhmf2jQqnrUP6O6zI",
+  authDomain: "practice-project-d0af0.firebaseapp.com",
+  databaseURL: "https://practice-project-d0af0-default-rtdb.firebaseio.com",
+  projectId: "practice-project-d0af0",
+  storageBucket: "practice-project-d0af0.appspot.com",
+  messagingSenderId: "43345600198",
+  appId: "1:43345600198:web:4dd232d1a967d07f4b81c7",
+  measurementId: "G-N90T9K4KX6"
 };
 
 // Initialize Firebase
